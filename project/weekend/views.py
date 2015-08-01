@@ -5,6 +5,7 @@ from weekend.models import Instagram
 from django.http import HttpResponse
 import os
 
+day = "2015-06-26 {}:00:00+00:00"
 
 class IndexView(View):
     template = 'weekend/index.html'
@@ -14,11 +15,15 @@ class IndexView(View):
 
 class InstagramView(View):
 
-    def get(self,request, search):
-        if search == '':
+    def get(self, request, search, interval):
+        if search == "none" and interval == "all":
             all_posts = Instagram.objects.all()
-        else:
+        elif search == "none" and interval != "all": 
+            all_posts = Instagram.objects.filter(created_time__range=[day.format(interval), day.format(int(interval)+1)])
+        elif search != "none" and interval == "all":
             all_posts = Instagram.objects.filter(caption__icontains=search)
+        else:
+            all_posts = Instagram.objects.filter(caption__icontains=search, created_time__range=[day.format(interval), day.format(int(interval)+1)])
         all_post_info = []
         for post in all_posts:
             all_post_info.append(post.info)
@@ -27,10 +32,6 @@ class InstagramView(View):
 
 
 def flag(request):
-    print('got here')
-    print(os.system('pwd'))
-    print(type(os.getcwd()))
-    print(os.getcwd())
     image_data = open(os.getcwd()+'/weekend/templates/weekend/gay_flag.png',"rb").read()
     return HttpResponse(image_data,content_type="image/png")
 
