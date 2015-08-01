@@ -1,7 +1,7 @@
 var map, pointarray, heatmap, coordinateObjects;
 
 function initialize() {
-    $.getJSON("/weekend/instagram", function(data) {
+    $.getJSON("/weekend/instagram/6gay", function(data) {
         var all_posts = data['all_post_info'];
         // var coordinates = [];
         // for (i in all_posts) {
@@ -34,7 +34,8 @@ function initialize() {
                 position: coordinateObjects[i],
                 map: map,
                 icon: flag,
-                title: "Hello World" + i
+                title: "Hello World" + i,
+                id: i
             })
             
             marker_objects.push(marker)
@@ -49,31 +50,25 @@ function initialize() {
             var contentString = '<div id="content">'+
                   '<div id="siteNotice">'+
                   '</div>'+
-                  '<h1 id="firstHeading" class="firstHeading"><img src=' + all_posts[i].thumbnail_url + '>' + marker_objects[i].title + '</h1>'+
-                  '<div id="bodyContent">'+
-                  '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-                  'sandstone rock formation in the southern part of the '+
-                  'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
-                  'south west of the nearest large town, Alice Springs; 450&#160;km '+
-                  '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
-                  'features of the Uluru - Kata Tjuta National Park. Uluru is '+
-                  'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
-                  'Aboriginal people of the area. It has many springs, waterholes, '+
-                  'rock caves and ancient paintings. Uluru is listed as a World '+
-                  'Heritage Site.</p>'+
-                  '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-                  'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-                  '(last visited June 22, 2009).</p>'+
+                  '<h1 id="firstHeading" class="firstHeading">' + all_posts[i].user + '</h1>'+
+                  '<div id="bodyContent">' + 
+                  '<img src='+ all_posts[i].thumbnail_url +'> ' + 
+                  '<p>' + all_posts[i].created_time + '</p>' +
+                  '<p>Likes: ' + all_posts[i].likes + '</p>' +
+                  '<p>Caption: ' + all_posts[i].caption + '</p>' +
                   '</div>'+
                   '</div>';
+
+              
 
             infowindows[i] = new google.maps.InfoWindow({
                 content: contentString
             });
             
             google.maps.event.addListener(marker_objects[i], 'click', function() {
-                infowindows[i].open(map, this);
-                infowindows[i].setContent(all_posts[i].thumbnail_url)
+                var id = this.id
+                infowindows[id].open(map, this);
+  
             });
             console.log(infowindows[i])
         }    
