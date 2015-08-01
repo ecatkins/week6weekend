@@ -38,11 +38,11 @@ function initialize(event, search, interval) {
             
             marker_objects.push(marker)
         }
-        var infowindows = []
-        for (var i in marker_objects) {
-            infowindows[i] = "infowindows" + i 
-        }
+        // var infowindows = []
         // for (var i in marker_objects) {
+        //     infowindows[i] = "infowindows" + i 
+        // }
+        for (var i in marker_objects) {
 
         //     var contentString = '<div id="content">'+
         //           '<div id="siteNotice">'+
