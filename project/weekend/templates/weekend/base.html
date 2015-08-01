@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load staticfiles %}
+<link rel="stylesheet" href ="{% static 'weekend/main.css'}">
+	<title></title>
+</head>
+<body>
+<div class = "container">
+	<header>
+		{% block header %}
+			<h1>Name of our App</h1>
+		{% endblock %}
+	</header>
+
+	<div class = "content">
+		{% block content %}
+		{% endblock %}
+	</div>
+
+	<footer>
+		{% block footer %}
+		Our page
+		{% endblock %}
+	</footer>
+</div>
+</body>
+</html>
