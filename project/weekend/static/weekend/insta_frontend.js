@@ -58,13 +58,24 @@ function initialize(event, search, interval) {
 
               
 
-            infowindows[i] = new google.maps.InfoWindow({
-                content: contentString
-            });
+            // infowindows[i] = new google.maps.InfoWindow({
+            //     content: contentString
+            // });
             
             google.maps.event.addListener(marker_objects[i], 'click', function() {
                 var id = this.id
-                infowindows[id].open(map, this);
+                // infowindows[id].open(map, this);
+                $("#post").html('<div id="content">'+
+                  '<div id="siteNotice">'+
+                  '</div>'+
+                  '<h1 id="firstHeading" class="firstHeading">' + all_posts[id].user + '</h1>'+
+                  '<div id="bodyContent">' + 
+                  '<img src='+ all_posts[id].thumbnail_url +'> ' + 
+                  '<p>' + all_posts[id].created_time + '</p>' +
+                  '<p>Likes: ' + all_posts[id].likes + '</p>' +
+                  '<p>Caption: ' + all_posts[id].caption + '</p>' +
+                  '</div>'+
+                  '</div>')
   
             });
         }    
