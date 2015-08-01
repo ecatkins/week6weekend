@@ -35,3 +35,9 @@ def flag(request):
     image_data = open(os.getcwd()+'/weekend/templates/weekend/gay_flag.png',"rb").read()
     return HttpResponse(image_data,content_type="image/png")
 
+
+class FrontView(View):
+    template = 'weekend/front.html'
+    def get(self,request):
+        return render(request, self.template)
+
