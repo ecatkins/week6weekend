@@ -67,7 +67,10 @@ def seed_model(num_time_periods):
 			except:
 				caption = ""
 			new_entry = Instagram(created_time=created_time,thumbnail_url=thumbnail_url,standard_url=standard_url,likes=likes,latitude=latitude,longitude=longitude,user=user,post_type=post_type,caption=caption)
-			new_entry.save()
+			try:
+				new_entry.save()
+			except:
+				continue
 
 
 
