@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<html>
-<head>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<link rel="stylesheet" href="{% static 'weekend/slider.css' %}">
-<script src="{% static 'weekend/bootstrap-slider.js' %}"></script>
-<script src="{% static 'weekend/insta_frontend.js' %}"></script>
+{% extends "weekend/base.html" %}
 
-    <title>Weekend</title>
-</head>
-<body>
+
+{% block content %}
 Hello Greenbacks
 <div id="map-canvas" style="width:500px;height:380px;"></div>
 <div id="test">
@@ -20,9 +11,5 @@ Hello Greenbacks
         <p>Caption search: <input type="text" name="search_field"></p>
         <input type="submit" value="Search"> 
     </form>
+{% endblock %}
 
-
-</div>
-
-</body>
-</html>
