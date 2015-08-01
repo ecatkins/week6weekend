@@ -42,19 +42,19 @@ function initialize(event, search, interval) {
         for (var i in marker_objects) {
             infowindows[i] = "infowindows" + i 
         }
-        for (var i in marker_objects) {
+        // for (var i in marker_objects) {
 
-            var contentString = '<div id="content">'+
-                  '<div id="siteNotice">'+
-                  '</div>'+
-                  '<h1 id="firstHeading" class="firstHeading">' + all_posts[i].user + '</h1>'+
-                  '<div id="bodyContent">' + 
-                  '<img src='+ all_posts[i].thumbnail_url +'> ' + 
-                  '<p>' + all_posts[i].created_time + '</p>' +
-                  '<p>Likes: ' + all_posts[i].likes + '</p>' +
-                  '<p>Caption: ' + all_posts[i].caption + '</p>' +
-                  '</div>'+
-                  '</div>';
+        //     var contentString = '<div id="content">'+
+        //           '<div id="siteNotice">'+
+        //           '</div>'+
+        //           '<h1 id="firstHeading" class="firstHeading">' + all_posts[i].user + '</h1>'+
+        //           '<div id="bodyContent">' + 
+        //           '<img src='+ all_posts[i].thumbnail_url +'> ' + 
+        //           '<p>' + all_posts[i].created_time + '</p>' +
+        //           '<p>Likes: ' + all_posts[i].likes + '</p>' +
+        //           '<p>Caption: ' + all_posts[i].caption + '</p>' +
+        //           '</div>'+
+        //           '</div>';
 
               
 
