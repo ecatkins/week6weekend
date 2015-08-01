@@ -38,7 +38,6 @@ function initialize(event, search, interval) {
                 position: coordinateObjects[i],
                 map: map,
                 icon: flag,
-                title: "Hello World" + i,
                 id: i
             })
             
