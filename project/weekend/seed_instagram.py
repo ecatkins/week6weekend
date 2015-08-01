@@ -51,8 +51,8 @@ def seed_model(num_time_periods):
 	max_time = 1435319940
 	for x in range(1,num_time_periods):
 		posts = instagram(20,100,40.733661, -74.011023,min_time,max_time)
-		min_time += 3600/num_time_periods*24*x
-		max_time += 3600/num_time_periods*24*x
+		min_time += 3600/num_time_periods*24
+		max_time += 3600/num_time_periods*24
 		for post in posts:
 			created_time = post['created_time']
 			thumbnail_url = post['thumbnail_url']
