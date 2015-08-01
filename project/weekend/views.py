@@ -13,9 +13,8 @@ class IndexView(View):
 class InstagramView(View):
 
     def get(self,request):
-        print('insta view func')
         all_posts = Instagram.objects.all()
         all_post_info = []
         for post in all_posts:
-            all_posts.append(post.info)
+            all_post_info.append(post.info)
         return JsonResponse({"all_post_info": all_post_info})
