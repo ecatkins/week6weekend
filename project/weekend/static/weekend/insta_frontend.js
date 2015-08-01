@@ -7,11 +7,6 @@ function initialize(event, search, interval) {
     console.log(interval, search)
     $.getJSON("/weekend/instagram/" + search + "/" + interval, function(data) {
         var all_posts = data['all_post_info'];
-        // var coordinates = [];
-        // for (i in all_posts) {
-        //     coordinates.push([all_posts[i].latitude, all_posts[i].longitude])
-        // };
-        // console.log(coordinates)
         coordinateObjects = []
         for (i in all_posts) {
           coordinateObjects.push(new google.maps.LatLng(all_posts[i].latitude, all_posts[i].longitude))

@@ -2,14 +2,24 @@
 
 
 {% block content %}
-Hello Greenbacks
-<div id="map-canvas" style="width:500px;height:380px;"></div>
-<div id="test">
-    <form>
-        {%csrf_token%}
-        <p>Time interval: <input type="number" name="time_interval" max="24"></p>
-        <p>Caption search: <input type="text" name="search_field"></p>
-        <input type="submit" value="Search"> 
-    </form>
+
+<div id ="top">
+
+<div id="map-canvas" style="width:500px;height:380px;"> </div> 
+
+<div id="post"> Hey </div> 
+
+</div>
+
+<div id= "form">
+
+<form>
+    {%csrf_token%}
+    <p>Time interval: <input type="number" name="time_interval" max="24"></p>
+    <p>Caption search: <input type="text" name="search_field"></p>
+    <input type="submit" value="Search"> 
+</form>
+
+</div>
 {% endblock %}
 
