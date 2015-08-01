@@ -633,3 +633,11 @@ function changeOpacity() {
 //   initialize()
 // })
 google.maps.event.addDomListener(window, 'load', initialize);
+
+
+$(document).ready(function () {
+    $.getJSON("/weekend/instagram", function(data) {
+        console.log('hello greenbacks')
+        console.log(data['all_post_info'])
+    })
+})
