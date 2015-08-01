@@ -1,0 +1,35 @@
+header {
+	height: 5em;
+	background-color: blue;
+	color:white ;
+	position:relative;
+}
+
+header h1 {
+	font-family: 'Muli', sans-serif;
+	text-align: center;
+}
+
+#top {
+	position: relative;
+	height:25em;
+}
+
+#map-canvas {
+	position: absolute;
+	left: 1em;
+}
+
+#post {
+	position: absolute;
+	left:40em;
+}
+
+#form {
+	position: relative;
+
+}
+
+form {
+	display: block;
+}
