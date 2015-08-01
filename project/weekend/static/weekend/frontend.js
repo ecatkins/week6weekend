@@ -1,7 +1,7 @@
 var map, pointarray, heatmap, coordinateObjects;
 
-function initialize() {
-    $.getJSON("/weekend/instagram", function(data) {
+function initialize(holder) {
+    $.getJSON("/weekend/instagram" + holder, function(data) {
         var all_posts = data['all_post_info'];
         // var coordinates = [];
         // for (i in all_posts) {

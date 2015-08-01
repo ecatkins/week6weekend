@@ -14,8 +14,11 @@ class IndexView(View):
 
 class InstagramView(View):
 
-    def get(self,request):
-        all_posts = Instagram.objects.all()
+    def get(self,request, search):
+        if search == '':
+            all_posts = Instagram.objects.all()
+        else:
+            all_posts = Instagram.objects.filter(caption__icontains=search)
         all_post_info = []
         for post in all_posts:
             all_post_info.append(post.info)
