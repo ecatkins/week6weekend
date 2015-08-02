@@ -42,30 +42,45 @@ form {
 }
 
 a {
-	text-decoration: none
+	text-decoration: none;
+	color:white;
+	font-size: 3em;
 }
+
+.frontlink {
+height: 10em;
+width: 25em;
+position: absolute;
+font-family: 'Nunito', sans-serif;
+text-align: center;
+line-height: 10em;
+}
+
+.frontlink:hover {
+	opacity:0.5;
+}
+
 
 #front_gay {
 top: 5em;
-left: 5em;
-position: absolute;
-
+left: 10%;
+background-color: red;
 }
 
 #front_wwc {
 top: 5em;
-left:25em;
-position: absolute
+right:10%;
+background-color: red;
 }
 
 #front_C {
-top: 15em;
-left:5em;
-position: absolute;
+top: 25em;
+left:10%;
+background-color: red;
 }
 
 #front_D {
-top: 15em;
-left:25em;
-position: absolute
+top: 25em;
+right:10%;
+background-color: red;
 }
