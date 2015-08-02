@@ -23,7 +23,7 @@ class WWCView(View):
 
     def get(self, request):
         return JsonResponse({
-            "event":"gay_pride",
+            "event":"wwc",
             "date":"2015-07-10 {}:00:00+00:00",
             "icon":"soccer",
             "latitude":"40.713669",
@@ -47,16 +47,19 @@ class InstagramView(View):
         elif event_name == "wwc":
             day = "2015-07-10 {}:00:00+00:00"
         #filter by search fields
+        print(search,interval)
         if search == "none" and interval == "all":
-            all_posts = Instagram.objects.filter(event_name=event_name)
+            all_posts = Instagram.objects.filter(event=event_name)
         elif search == "none" and interval != "all": 
-            all_posts = Instagram.objects.filter(event_name=event_name, created_time__range=[day.format(interval), day.format(int(interval)+1)])
+            all_posts = Instagram.objects.filter(event=event_name, created_time__range=[day.format(interval), day.format(int(interval)+1)])
         elif search != "none" and interval == "all":
-            all_posts = Instagram.objects.filter(event_name=event_name, caption__icontains=search)
+            all_posts = Instagram.objects.filter(event=event_name, caption__icontains=search)
         else:
-            all_posts = Instagram.objects.filter(event_name=event_name, caption__icontains=search, created_time__range=[day.format(interval), day.format(int(interval)+1)])
+            all_posts = Instagram.objects.filter(event=event_name, caption__icontains=search, created_time__range=[day.format(interval), day.format(int(interval)+1)])
+        print(all_posts)
         all_post_info = []
         for post in all_posts:
+
             all_post_info.append(post.info)
         return JsonResponse({"all_post_info": all_post_info})
 
