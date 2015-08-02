@@ -9,6 +9,7 @@ function initialize(event, search, interval) {
         var latitude = data['latitude']
         var longitude = data['longitude']
         var zoom = parseInt(data['zoom'])
+        console.log(event_name)
 
         search = search || "none"
         interval = interval || "all"

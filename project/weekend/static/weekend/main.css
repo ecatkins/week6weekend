@@ -12,23 +12,33 @@ header h1 {
 	padding-top:0.5em;
 }
 
-#top {
+footer {
+	position: fixed;
+	bottom: 0em;
+}
+
+#everything {
 	position: relative;
-	height:25em;
 }
 
 #map-canvas {
 	position: absolute;
 	left: 1em;
+	top: 2em;
+	width:30em;
+	height:25em;
 }
 
 #post {
 	position: absolute;
-	left:40em;
+	left: 50%;
+	width: 30%;
 }
 
 #form {
-	position: relative;
+	position: absolute;
+	top: 27em;
+	left: 3em;
 
 }
 
@@ -54,18 +64,43 @@ position: absolute;
 font-family: 'Nunito', sans-serif;
 text-align: center;
 line-height: 10em;
+cursor: pointer;
+box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
+
 }
 
-.frontlink:hover {
-	opacity:0.5;
+.frontlink a:before {
+	content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,255,255, 0.5);
+  transition: all .3s linear;
 }
 
+
+
+.frontlink a:hover:before { background: none; }
+
+
+.frontlink a {
+	position: :relative;
+}
+
+.frontlink img {
+    max-height: 100%;
+    max-width: 100%;
+}
 
 #front_gay {
 top: 5em;
 left: 10%;
-background-color: red;
 }
+
+#front_gay:hover:before {background: none;}
 
 #front_wwc {
 top: 5em;

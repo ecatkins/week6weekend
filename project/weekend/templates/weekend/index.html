@@ -3,23 +3,17 @@
 
 {% block content %}
 
-<div id ="top">
-
-<div id="map-canvas" style="width:500px;height:380px;"> </div> 
-
-<div id="post"></div> 
-
-</div>
-
-<div id= "form">
-
-<form>
-    {%csrf_token%}
-    <p>Time interval: <input type="number" name="time_interval" max="24"></p>
-    <p>Caption search: <input type="text" name="search_field"></p>
-    <input type="submit" value="Search"> 
-</form>
-
+<div id="everything">
+	<div id="map-canvas"s></div> 
+	<div id="post"></div> 
+	<div id= "form">
+		<form>
+		    {%csrf_token%}
+		    <p>Time interval: <input type="number" name="time_interval" max="24"></p>
+		    <p>Caption search: <input type="text" name="search_field"></p>
+		    <input type="submit" value="Search"> 
+		</form>
+	</div>
 </div>
 {% endblock %}
 
