@@ -54,18 +54,42 @@ position: absolute;
 font-family: 'Nunito', sans-serif;
 text-align: center;
 line-height: 10em;
+
+cursor: pointer;
+box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
+
 }
 
-.frontlink:hover {
+.frontlink:before {
+	content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,255,255, 0.5);
+  transition: all .3s linear;
+}
+
+.frontlink:hover:before { background: none; }
+
+/*.frontlink:hover {
 	opacity:0.5;
-}
+}*/
 
+
+.frontlink img {
+    max-height: 100%;
+    max-width: 100%;
+}
 
 #front_gay {
 top: 5em;
 left: 10%;
-background-color: red;
 }
+
+#front_gay:hover:before {background: none;}
 
 #front_wwc {
 top: 5em;
