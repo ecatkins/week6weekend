@@ -9,7 +9,12 @@ function initialize(event, search, interval) {
         var latitude = data['latitude']
         var longitude = data['longitude']
         var zoom = parseInt(data['zoom'])
-        console.log(event_name)
+        var suggested_search = data['suggested_search']
+        console.log(suggested_search)
+        
+        ///adding suggest search terms
+        $("#search_term").attr("placeholder","e.g. " + suggested_search)
+
 
         search = search || "none"
         interval = interval || "all"
@@ -30,9 +35,7 @@ function initialize(event, search, interval) {
 
             var pointArray = new google.maps.MVCArray(coordinateObjects);
             
-            // heatmap = new google.maps.visualization.HeatmapLayer({
-            // data: pointArray
-            // });
+          
             var icon_link = icon
 
             var marker_objects = []
@@ -46,29 +49,8 @@ function initialize(event, search, interval) {
                 
                 marker_objects.push(marker)
             }
-            // var infowindows = []
-            // for (var i in marker_objects) {
-            //     infowindows[i] = "infowindows" + i 
-            // }
+           
             for (var i in marker_objects) {
-
-            //     var contentString = '<div id="content">'+
-            //           '<div id="siteNotice">'+
-            //           '</div>'+
-            //           '<h1 id="firstHeading" class="firstHeading">' + all_posts[i].user + '</h1>'+
-            //           '<div id="bodyContent">' + 
-            //           '<img src='+ all_posts[i].thumbnail_url +'> ' + 
-            //           '<p>' + all_posts[i].created_time + '</p>' +
-            //           '<p>Likes: ' + all_posts[i].likes + '</p>' +
-            //           '<p>Caption: ' + all_posts[i].caption + '</p>' +
-            //           '</div>'+
-            //           '</div>';
-
-                  
-
-                // infowindows[i] = new google.maps.InfoWindow({
-                //     content: contentString
-                // });
                 
                 google.maps.event.addListener(marker_objects[i], 'click', function() {
                     var id = this.id
@@ -76,18 +58,18 @@ function initialize(event, search, interval) {
                     $("#post").html('<div id="content">'+
                       '<div id="siteNotice">'+
                       '</div>'+
-                      '<h1 id="firstHeading" class="firstHeading">' + all_posts[id].user + '</h1>'+
+                      '<h1 id="firstHeading" class="firstHeading"> <a href="https://instagram.com/' + all_posts[id].user + '"">' + all_posts[id].user + '</a></h1>'+
                       '<div id="bodyContent">' + 
                       '<img src='+ all_posts[id].thumbnail_url +'> ' + 
-                      '<p>' + all_posts[id].created_time + '</p>' +
-                      '<p>Caption: ' + all_posts[id].caption + '</p>' +
+                      '<p id="time_created">' + all_posts[id].created_time + '</p>' +
+                      '<p id="caption">Caption: ' + all_posts[id].caption + '</p>' +
                       '</div>'+
                       '</div>')
       
                 });
             }    
 
-            // heatmap.setMap(map);
+        
         })
     })
 
