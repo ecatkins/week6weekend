@@ -4,16 +4,21 @@ var map, pointarray, heatmap, coordinateObjects;
 
 function initialize(event, search, interval) {
     $.getJSON(window.location.pathname+ "/info", function(data) {
+        var event_title = data['event_title']
         var event_name = data['event']
         var icon = data['icon']
         var latitude = data['latitude']
         var longitude = data['longitude']
         var zoom = parseInt(data['zoom'])
         var suggested_search = data['suggested_search']
+        var event_date = data['event_date_display']
+        console.log(event_date)
         console.log(suggested_search)
         
-        ///adding suggest search terms
+        ///adding suggest search terms and title
         $("#search_term").attr("placeholder","e.g. " + suggested_search)
+        $("header h1").append(" <span id='event_header'>" + event_title +"</span>")
+        $("#event_date p").text(event_date)
 
 
         search = search || "none"
