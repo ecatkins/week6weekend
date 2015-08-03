@@ -92,7 +92,7 @@ def seed_model(event,min_time,min_latitude,max_latitude, min_longitude, max_long
 # seed_model("gay_pride",1435291200,40.705276,40.752454,-74.019694,-73.970446,288,50)
 
 
-# seed_model("wwc",1436500800,40.705276,40.752454,-74.019694,-73.970446,500,50)
+# seed_model("wwc",1436500800,40.705276,40.752454,-74.019694,-73.970446,250,50)
 
 			
 			
