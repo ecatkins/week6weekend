@@ -23,7 +23,7 @@ function initialize(event, search, interval) {
 
         search = search || "none"
         interval = interval || "all"
-        $.getJSON("/weekend/instagram/" + event_name + "/" + search + "/" + interval, function(data) {
+        $.getJSON("/instavent/instagram/" + event_name + "/" + search + "/" + interval, function(data) {
             var all_posts = data['all_post_info'];
             coordinateObjects = []
             for (i in all_posts) {
