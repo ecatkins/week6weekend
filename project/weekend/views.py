@@ -15,7 +15,8 @@ class GayPrideView(View):
             "icon":"flag",
             "latitude":"40.733661",
             "longitude":"-74.011023",
-            "zoom":"13"
+            "zoom":"13",
+            "suggested_search": "pride, gay, SCOTUS"
             })
 
 
@@ -28,7 +29,8 @@ class WWCView(View):
             "icon":"soccer",
             "latitude":"40.713669",
             "longitude":"-74.006016",
-            "zoom":"13"
+            "zoom":"13",
+            "suggested_search": "USWNT, WWC, Alex Morgan"
             })
 
 

@@ -29,11 +29,6 @@ footer {
 	height:25em;
 }
 
-#post {
-	position: absolute;
-	left: 50%;
-	width: 30%;
-}
 
 #form {
 	position: absolute;
@@ -44,6 +39,7 @@ footer {
 
 form {
 	display: block;
+	width:20em;
 }
 
 #front_container {
@@ -58,30 +54,27 @@ a {
 }
 
 .frontlink {
-height: 10em;
-width: 25em;
-position: absolute;
-font-family: 'Nunito', sans-serif;
-text-align: center;
-line-height: 10em;
-cursor: pointer;
-box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
-
+	height: 10em;
+	width: 25em;
+	position: absolute;
+	font-family: 'Nunito', sans-serif;
+	text-align: center;
+	line-height: 10em;
+	cursor: pointer;
+	box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
 }
 
 .frontlink a:before {
 	content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0,255,255, 0.5);
-  transition: all .3s linear;
+	  display: block;
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  background: rgba(0,255,255, 0.5);
+	  transition: all .3s linear;
 }
-
-
 
 .frontlink a:hover:before { background: none; }
 
@@ -91,8 +84,10 @@ box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
 }
 
 .frontlink img {
-    max-height: 100%;
-    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    margin:auto;
+    display: block
 }
 
 #front_gay {
@@ -108,14 +103,72 @@ right:10%;
 background-color: red;
 }
 
+#front_wwc a:before {
+	background: rgba(255,0,0, 0.5);
+}
+
+#front_wwc a:hover:before { background: none; }
+
 #front_C {
 top: 25em;
 left:10%;
 background-color: red;
 }
 
+#front_C a:before {
+	background: rgba(255,255,0, 0.5);
+}
+
+#front_C a:hover:before { background: none; }
+
 #front_D {
 top: 25em;
 right:10%;
 background-color: red;
 }
+
+#front_D a:before {
+	background: rgba(0,0,0, 0.5);
+}
+
+#front_D a:hover:before { background: none; }
+
+
+/*Javascript formatting*/
+#post {
+	top:2em;
+	position: absolute;
+	right: 0%;
+	min-height:25em;
+	width: 50%;
+	border: 5px solid rgba(0, 0, 205, .5);
+	font-family: 'Oxygen', sans-serif;
+}
+
+
+
+.firstHeading {
+	text-align: center;
+	font-weight:700;
+}
+
+.firstHeading a {
+	text-decoration: none;
+	color:black;
+	font-size: 0.8em;
+}
+
+#post img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#time_created {
+	text-align: center;
+}
+
+#caption {
+	margin:1em;
+}
+

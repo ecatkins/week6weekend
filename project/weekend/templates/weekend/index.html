@@ -7,13 +7,15 @@
 	<div id="map-canvas"s></div> 
 	<div id="post"></div> 
 	<div id= "form">
-		<form class=form-group>
+		</br>
+		<form class="form-group">
 		    {%csrf_token%}
-		    <label for="time_interval">Time</label>
-		   <input type="number" name="time_interval" max="24">
-		   <label for="exampleInputEmail1">Time</label>
-		    <p>Caption search: <input type="text" name="search_field"></p>
-		    <input type="submit" value="Search"> 
+		   <label for="time_interval">Time</label>
+		   <input class="form-control" type="number" name="time_interval" max="24" placeholder="Enter an hour 0-23">
+		   <label for="search_field">Caption Search</label>
+		   <input id ="search_term" class="form-control" type="text" name="search_field" placeholder="e.g. #food">
+		   </br>
+		    <input class="btn btn-default" type="submit" value="Search"> 
 		</form>
 	</div>
 </div>
