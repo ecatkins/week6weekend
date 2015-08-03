@@ -17,7 +17,7 @@ function initialize(event, search, interval) {
         
         ///adding suggest search terms and title
         $("#search_term").attr("placeholder","e.g. " + suggested_search)
-        $("header h1").append(" <span id='event_header'>" + event_title +"</span>")
+        $("header h1").html("Instavent <span id='event_header'>" + event_title +"</span>")
         $("#event_date p").text(event_date)
 
 
