@@ -1,6 +1,6 @@
 header {
 	height: 5em;
-	background-color: blue;
+	background-color: #000000;
 	color:white ;
 	position:relative;
 	opacity:0.5;
@@ -10,6 +10,11 @@ header h1 {
 	font-family: 'Muli', sans-serif;
 	text-align: center;
 	padding-top:0.5em;
+}
+
+#event_header {
+	color: #0000FF;
+	opacity: 1;
 }
 
 footer {
@@ -35,6 +40,17 @@ footer {
 	top: 27em;
 	left: 3em;
 
+}
+
+#event_date {
+	position:absolute;
+	top: 30em;
+	right:10%
+
+}
+
+#event_date p {
+	font-size: 4em;
 }
 
 form {
@@ -143,6 +159,7 @@ background-color: red;
 	width: 50%;
 	border: 5px solid rgba(0, 0, 205, .5);
 	font-family: 'Oxygen', sans-serif;
+	background-color:#f5f5f5;
 }
 
 

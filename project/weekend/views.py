@@ -11,12 +11,14 @@ class GayPrideView(View):
     def get(self,request):
         return JsonResponse({
             "event":"gay_pride",
+            "event_title": "Gay Pride Parade",
             "date":"2015-06-26 {}:00:00+00:00",
             "icon":"flag",
             "latitude":"40.733661",
             "longitude":"-74.011023",
             "zoom":"13",
-            "suggested_search": "pride, gay, SCOTUS"
+            "suggested_search": "pride, gay, SCOTUS",
+            "event_date_display": "26 June 2015"
             })
 
 
@@ -25,12 +27,14 @@ class WWCView(View):
     def get(self, request):
         return JsonResponse({
             "event":"wwc",
+            "event_title": "Women's World Cup Victory Parade",
             "date":"2015-07-10 {}:00:00+00:00",
             "icon":"soccer",
             "latitude":"40.713669",
             "longitude":"-74.006016",
             "zoom":"13",
-            "suggested_search": "USWNT, WWC, Alex Morgan"
+            "suggested_search": "USWNT, WWC, Alex Morgan",
+            "event_date_display": "10 July 2015"
             })
 
 
